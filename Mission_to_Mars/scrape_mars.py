@@ -168,5 +168,6 @@ def scrape_all():
         "facts": mars_facts(),
         "hemispheres": hemispheres(browser),
     }
+    browser.quit()
     return(data)
 

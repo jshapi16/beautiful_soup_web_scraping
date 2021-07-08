@@ -19,9 +19,20 @@
     <h3>{{mars_data.news_title}}</h3>
     <p>{{mars_data.news_p}}</p>
     <h2>Featured Mars Image</h2>
-    <h3>{{mars_data.featured_image_url}}</h3>
+    <img src="{{mars_data.featured_image}}" alt="featured_img">
     <h2>Mars hemispheres</h2>
-    <h3>{{mars_data.mars_hemispheres}}</h3>
+    
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          {% for hemispheres in mars_data.hemispheres%}
+          <h3>{{hemispheres.title}}</h3>
+          <img src="{{hemispheres.img_url}}" alt="hemisphere image"style="width:200px;height:200px;">
+          {% endfor %}
+        </div>
+      </div>
+  </section>
+
     <h2>Mars Facts</h2>
     <p>{{mars_data.mars_facts| safe}}</p>
   </div>

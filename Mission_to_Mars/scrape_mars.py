@@ -49,21 +49,29 @@ def scrape_all():
         #Visit mars hemispheres website
         url = 'https://marshemispheres.com/'
         browser.visit(url)
-        hemisphere_image_links = []
 
+        hemisphere_image_links = []
+        
         #get links for all hemispheres
         links = browser.find_by_css('a.product-item img')
-        hemisphere_dict = {}
+        print(links)
+        
         #click all links and get the href
         for i in range(len(links)):
+            hemisphere_dict = {}
+            
             browser.find_by_css('a.product-item img')[i].click()
             thumb_img = browser.links.find_by_text('Sample').first
             print(thumb_img)
+
             #hemisphere href
             hemisphere_dict['img_url'] = thumb_img['href']
+
             #hemisphere title
             hemisphere_dict['title'] = browser.find_by_css('h2.title').text
+
             hemisphere_image_links.append(hemisphere_dict)
+
             browser.back()
         return hemisphere_image_links
 

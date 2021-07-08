@@ -18,10 +18,11 @@ def index():
     return render_template("index.html", mars_data=mars_data)
 
 @app.route("/scrape")
-def scraper():
+def scrape():
     mars_data = mongo.db.mars_data
     mars_db = scrape_mars.scrape_all()
-    mars_db.update({}, mars_data, upsert=True)
+    #mongo.db.collection.update({}, mars_data, upsert=True)
+    mars_data.update({}, mars_db, upsert=True)
     return redirect("/", code=302)
 
 

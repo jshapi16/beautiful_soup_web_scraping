@@ -70,9 +70,12 @@ def scrape_all():
     mars_data = {
         "news_title": news_title,
         "news_p": news_p,
-        "featured_image": featured_image_url(browser),
+        "featured_image": featured_image_url,
         "mars_facts": mars_facts(),
-        "hemispheres": mars_hemispheres(browser),
+        "hemispheres": mars_hemispheres(),
     }
     browser.quit()
     return(mars_data)
+
+if __name__ == "__main__":
+    print(scrape_all())

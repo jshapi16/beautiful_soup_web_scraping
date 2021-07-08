@@ -16,14 +16,17 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
     </div>
     <h2>Latest Mars news</h2>
-    <h3>{{news_title.news_title}}</h3>
-    <p>{{news_p.news_p}}</p>
+    <h3>{{mars_data.news_title}}</h3>
+    <p>{{mars_data.news_p}}</p>
     <h2>Featured Mars Image</h2>
-    <h3>{{featured_image.featured_image_url(browser)}}</h3>
+    <h2>Mars hemispheres</h2>
+    <h3>{{mars_data.mars_hemispheres}}</h3>
+    <h3>{{mars_data.featured_image_url}}</h3>
     <h2>Mars Facts</h2>
-    <p>{{facts.mars_facts()}}</p>
+    <p>{{mars_data.mars_facts}}</p>
   </div>
   </div>
+  
 </body>
 
 </html>

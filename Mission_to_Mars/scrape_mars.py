@@ -36,7 +36,6 @@ def scrape_all():
     #Select image src and add it to the url
     image_anchor = img_soup.find("img", class_="fancybox-image").get('src')
     featured_image_url = url + image_anchor
-    return featured_image_url
     
     def mars_facts():
         mars_table = pd.read_html('https://galaxyfacts-mars.com')[0]
